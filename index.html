@@ -122,6 +122,8 @@ nav{
   transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .3s;
 }
 .mobile-menu.open{max-height:360px;padding:20px 6% 28px}
+@media(max-width:600px){.mobile-menu{padding:0 4%}.mobile-menu.open{padding:20px 4% 28px}}
+@media(max-width:480px){.mobile-menu{padding:0 16px}.mobile-menu.open{padding:20px 16px 24px}}
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px}
 .mobile-menu ul a{
   display:block;padding:11px 0;color:var(--text2);text-decoration:none;
@@ -483,6 +485,20 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 6% 
 .cert-tag{display:flex;align-items:center;gap:6px;padding:4px 12px;background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue)}
 
 /* ── RESPONSIVE ── */
+.two-col-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+
+@media(max-width:1200px){
+  nav{padding:0 4%}
+  section{padding:80px 4%}
+  .wrap{padding:0 4px}
+  .hero-geo{opacity:.5}
+  .hero{padding:100px 4% 70px}
+  .stats-bar{padding:0 4%}
+  .pricing-box{padding:48px 40px}
+  .rate-box{padding:26px 36px}
+  .rn{font-size:56px}
+}
+
 @media(max-width:960px){
   .nav-links{display:none}
   .hamburger{display:flex}
@@ -490,31 +506,142 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 6% 
   .why-grid{grid-template-columns:1fr}
   .c-grid{grid-template-columns:repeat(3,1fr)}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-right:none}
+  .stat-item:nth-child(odd){border-right:1px solid var(--border)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .about-hero-inner{grid-template-columns:1fr}
-  .sdb-inner{grid-template-columns:1fr}
+  .two-col-grid{grid-template-columns:1fr;gap:40px}
+  .sdb-inner{grid-template-columns:1fr;gap:32px}
   .sdb-inner.rev{direction:ltr}
+  .sdb-visual{min-height:220px;padding:28px}
+  .sdb-big-icon{font-size:64px}
   .proj-grid{grid-template-columns:1fr 1fr}
   .testimonials-grid{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr}
   .values-grid{grid-template-columns:1fr 1fr}
   .cert-grid{grid-template-columns:1fr 1fr}
-  .pricing-box{padding:38px 30px;flex-direction:column}
+  .pricing-box{padding:38px 30px;flex-direction:column;text-align:center}
+  .pl{text-align:center}
+  .pl p{margin-left:auto;margin-right:auto}
+  .pl>div{justify-content:center;flex-wrap:wrap}
+  .cta-bar{padding:70px 4%}
+  footer{padding:50px 4% 28px}
 }
+
+@media(max-width:768px){
+  .hero-geo{display:none}
+  .hero-inner{max-width:100%}
+  .hero h1{font-size:clamp(42px,10vw,52px)}
+  .hero-desc{font-size:15px}
+  .hero-btns{flex-direction:column;width:100%;max-width:320px}
+  .hero-btns .btn-p,.hero-btns .btn-o{width:100%;justify-content:center}
+  .trust-chips{justify-content:flex-start}
+  .stat-num{font-size:42px}
+  .stat-num .suf{font-size:22px}
+  .sec-title{font-size:clamp(28px,5vw,40px)}
+  .sec-sub{margin-bottom:36px;font-size:14px}
+  .btn-p,.btn-o{padding:12px 22px;font-size:14px}
+  .svc-card{padding:22px 20px}
+  .svc-card h3{font-size:18px}
+  .why-panel{padding:26px 22px}
+  .qc-row{padding:16px 0}
+  .qc-n{font-size:32px;min-width:36px}
+  .pricing-box{padding:32px 24px}
+  .pl h2{font-size:32px}
+  .rate-box{padding:24px 28px}
+  .rn{font-size:48px}
+  .rf,.rp{font-size:11px}
+  .filter-bar{justify-content:flex-start;margin-bottom:32px}
+  .filter-btn{padding:10px 18px;font-size:13px}
+  .proj-thumb{height:160px;font-size:44px}
+  .proj-body{padding:18px 16px}
+  .proj-body h4{font-size:17px}
+  .contact-form-wrap{padding:28px 24px}
+  .contact-form-wrap h3{font-size:22px}
+  .form-group input,.form-group select,.form-group textarea{padding:12px 14px;font-size:15px;min-height:44px}
+  .form-submit{padding:14px;min-height:48px;font-size:15px}
+  .cta-bar h2{font-size:clamp(30px,5vw,42px)}
+  .footer-col h4{font-size:13px}
+  .footer-bottom{flex-direction:column;text-align:center;align-items:center;padding-top:22px}
+  .footer-bottom .cert-tag{justify-content:center}
+}
+
 @media(max-width:600px){
-  nav{padding:0 4%}
-  section{padding:70px 4%}
+  nav{padding:0 4%;height:64px}
+  .nav-cta{display:none}
+  .logo-mark{width:32px;height:32px;font-size:11px}
+  .logo-text{font-size:16px}
+  .mobile-menu{top:64px}
+  section{padding:60px 4%}
+  .hero{padding:88px 4% 50px}
+  .about-hero,.svc-detail-hero,.proj-hero,.contact-hero{padding:88px 4% 40px}
+  .svc-detail-hero h1,.proj-hero h1{font-size:clamp(36px,9vw,44px)}
+  .contact-hero h1{font-size:clamp(34px,8vw,42px)}
+  .about-hero h1{font-size:clamp(34px,8vw,44px)}
   .svc-grid{grid-template-columns:1fr}
-  .c-grid{grid-template-columns:repeat(2,1fr)}
+  .c-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .c-card{padding:14px 8px}
+  .c-flag{font-size:20px}
+  .c-name{font-size:11px}
   .footer-grid{grid-template-columns:1fr}
   .proj-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
-  .about-stats-mini{grid-template-columns:1fr 1fr}
-  .values-grid{grid-template-columns:1fr 1fr}
+  .about-stats-mini{grid-template-columns:1fr 1fr;gap:10px}
+  .asi{padding:14px}
+  .asi-n{font-size:28px}
+  .values-grid{grid-template-columns:1fr}
   .cert-grid{grid-template-columns:1fr}
-  .hero{padding:90px 4% 60px}
-  .about-hero,.svc-detail-hero,.proj-hero,.contact-hero{padding:100px 4% 50px}
+  .cert-card{padding:20px;flex-direction:column;text-align:center}
+  .cert-badge-icon{margin:0 auto}
+  .cta-bar{padding:60px 4%}
+  .cta-btns{flex-direction:column;width:100%;max-width:280px;margin:0 auto}
+  .cta-btns .btn-p,.cta-btns .btn-o{width:100%;justify-content:center}
+  .about-hero .hero-btns{flex-direction:column}
+  .about-hero .hero-btns .btn-p,.about-hero .hero-btns .btn-o{width:100%;justify-content:center}
+}
+
+@media(max-width:480px){
+  nav{padding:0 16px}
+  section{padding:48px 16px}
+  .wrap{max-width:100%}
+  .hero{padding:80px 16px 40px}
+  .hero h1{font-size:38px;letter-spacing:-.5px}
+  .hero-badge{font-size:10px;padding:4px 10px 4px 6px}
+  .hero-desc{font-size:14px}
+  .stats-bar{grid-template-columns:1fr;padding:0 16px}
+  .stat-item{border-right:none!important;border-bottom:1px solid var(--border);padding:28px 16px}
+  .stat-item:last-child{border-bottom:none}
+  .stat-num{font-size:36px}
+  .stat-num .suf{font-size:20px}
+  .tag{font-size:10px;padding:3px 10px}
+  .sec-title{font-size:28px}
+  .sec-sub{font-size:13px;margin-bottom:28px}
+  .svc-card{padding:20px 16px}
+  .why-panel{padding:22px 18px}
+  .qc-n{font-size:28px;min-width:32px}
+  .qc-row h4{font-size:15px}
+  .pricing-box{padding:24px 18px;border-radius:16px}
+  .pl h2{font-size:28px}
+  .pl p{font-size:14px}
+  .btn-w,.btn-gh{margin-bottom:8px;margin-right:0!important;width:100%;justify-content:center}
+  .rate-box{padding:20px 24px}
+  .rn{font-size:42px}
+  .about-hero,.svc-detail-hero,.proj-hero,.contact-hero{padding:80px 16px 32px}
+  .about-stats-mini{grid-template-columns:1fr}
+  .tl-item{flex-direction:column;gap:8px;padding:18px 0}
+  .tl-year{min-width:auto}
+  .filter-bar{gap:8px}
+  .filter-btn{padding:8px 14px;font-size:12px}
+  .proj-thumb{height:140px;font-size:40px}
+  .proj-body h4{font-size:16px}
+  .contact-form-wrap{padding:22px 18px}
+  .contact-form-wrap h3{font-size:20px}
+  .ci-item{padding:18px 0}
+  .footer-brand p{max-width:100%}
+  footer{padding:40px 16px 24px}
+  .cta-bar{padding:48px 16px}
+  .cta-bar h2{font-size:26px}
 }
 </style>
 </head>
@@ -735,7 +862,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 6% 
 
   <section style="background:var(--bg2);transition:background .35s">
     <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+      <div class="two-col-grid">
         <div>
           <div class="tag">// Our Story</div>
           <h2 class="sec-title">A Journey of <span class="bl">Innovation</span></h2>
